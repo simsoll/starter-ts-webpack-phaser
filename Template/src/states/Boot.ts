@@ -1,17 +1,12 @@
-/**
- * The Boot state is responsible for preloading the loadbar, and then configure the global settings.
- */
-class Boot extends Phaser.State {
+import { LOAD_STATE } from "../common/constants";
 
-    public preload(): void {
-        this.load.image('loadbar', 'images/loadbar.png');
-    }
+export class BootState extends Phaser.State {
 
-    public create(): void {
+    create(): void {
         // Set the background color
-        this.stage.backgroundColor = '#000';
+        this.game.stage.backgroundColor = "#3598db";
 
-        // Prevent the browser from pausing the game (and it's timers) if the tab loses focus
+        // Prevent the browser from pausing the game (and it"s timers) if the tab loses focus
         this.stage.disableVisibilityChange = true;
 
         // Scale on all devices
@@ -28,16 +23,16 @@ class Boot extends Phaser.State {
         //this.stage.scale.setScreenSize(true);
         //this.input.maxPointers = 1;
 
-        // If we're in development mode add the phase-debug plugin
-        if (process.env.NODE_ENV === 'development') {
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+
+        // If we"re in development mode add the phase-debug plugin
+        if (process.env.NODE_ENV === "development") {
             /* tslint:disable:no-require-imports */
-            const debug = require('phaser-debug');
+            const debug = require("phaser-debug");
             this.add.plugin(debug);
         }
 
         // Start the loader state
-        this.game.state.start('loader');
+        this.game.state.start(LOAD_STATE);
     }
 }
-
-export default Boot;

@@ -22,10 +22,16 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\common\constants.ts" />
+    <TypeScriptCompile Include="src\common\styles.ts" />
     <TypeScriptCompile Include="src\Game.ts" />
     <TypeScriptCompile Include="src\states\Boot.ts" />
-    <TypeScriptCompile Include="src\states\Loader.ts" />
-    <TypeScriptCompile Include="src\states\Main.ts" />
+    <TypeScriptCompile Include="src\states\Load.ts" />
+    <TypeScriptCompile Include="src\states\Lose.ts" />
+    <TypeScriptCompile Include="src\states\Menu.ts" />
+    <TypeScriptCompile Include="src\states\Play.ts" />
+    <TypeScriptCompile Include="src\states\states.ts" />
+    <TypeScriptCompile Include="src\states\Win.ts" />
     <TypeScriptCompile Include="typings\browser.d.ts" />
     <TypeScriptCompile Include="typings\browser\ambient\chai\index.d.ts" />
     <TypeScriptCompile Include="typings\browser\ambient\mocha\index.d.ts" />
