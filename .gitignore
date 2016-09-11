@@ -1,6 +1,0 @@
-node_modules
-coverage
-.vscode
-npm-debug.log
-
-public/app.js*
