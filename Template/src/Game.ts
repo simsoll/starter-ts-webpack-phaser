@@ -2,7 +2,7 @@ import { BOOT_STATE } from "./common/constants";
 import * as states from "./states/states";
 
 class PhaserGame {
-    game: Phaser.Game;
+    private game: Phaser.Game;
 
     constructor() {
         // create our phaser game
@@ -14,7 +14,7 @@ class PhaserGame {
         this.game = new Phaser.Game(800, 600, Phaser.AUTO, "content", { preload: this.preload, create: this.create });
     }
 
-    preload() {
+    private preload(): void {
         //     // add our logo image to the assets class under the
         //     // key "logo". We"re also setting the background colour
         //     // so it"s the same as the background colour in the image
@@ -22,7 +22,8 @@ class PhaserGame {
         //     this.game.stage.backgroundColor = 0xB20059;
     }
 
-    create() {
+    private create(): void {
+
         Object.keys(states).forEach(state => this.game.state.add(state, states[state]));
         this.game.state.start(BOOT_STATE);
 
@@ -31,7 +32,7 @@ class PhaserGame {
         // the image so it"s centered properly. There"s a lot of
         // centering in that last sentence
 
-        var logo = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, "phaser");
+        const logo = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, "phaser");
         logo.anchor.setTo(0.5, 0.5);
     }
 }
@@ -39,4 +40,4 @@ class PhaserGame {
 // when the page has finished loading, create our game
 window.onload = () => {
     new PhaserGame();
-}
+};

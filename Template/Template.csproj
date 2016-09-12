@@ -51,8 +51,8 @@
     <Content Include=".istanbul.yml" />
     <Content Include="LICENSE" />
     <Content Include="package.json" />
-    <Content Include="public\images\loadbar.png" />
-    <Content Include="public\images\phaser.png" />
+    <Content Include="public\assets\loadbar.png" />
+    <Content Include="public\assets\phaser.png" />
     <Content Include="public\index.html" />
     <Content Include="README.md" />
     <Content Include="src\game.css" />

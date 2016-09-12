@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs"
+        "module": "commonjs",
+        "sourceMap": true
   },
   "files": [
-    "typings/main.d.ts"
+    "./typings/main.d.ts",
+    "./typings/globals/phaser/index.d.ts"
   ]
 }
